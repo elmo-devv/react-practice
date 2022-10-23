@@ -1,6 +1,6 @@
 import React from 'react';
 
-export default function Form({value, setValue, handleSubmit}) {
+const Form = React.memo(({value, setValue, handleSubmit}) => {
   // input에 값을 치면 나옴
   const handleChange = (e) => {
     console.log(e.target.value);
@@ -24,4 +24,6 @@ export default function Form({value, setValue, handleSubmit}) {
       </form>
     </div>
   );
-}
+});
+
+export default Form;
