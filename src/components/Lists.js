@@ -2,7 +2,7 @@ import React from 'react';
 import {DragDropContext, Droppable, Draggable} from "react-beautiful-dnd";
 import List from "./List";
 
-const Lists = React.memo(({todoData, setTodoData}) => {
+const Lists = React.memo(({todoData, setTodoData, handleClick}) => {
   // const btnStyle = {
   //   color: "#fff",
   //   border: "none",
@@ -45,7 +45,8 @@ const Lists = React.memo(({todoData, setTodoData}) => {
                 <Draggable key={data.id} draggableId={data.id.toString()}
                            index={index}>
                   {(provided, snapshot) => (
-                    <List key={data.id}
+                    <List handleClick={handleClick}
+                          key={data.id}
                           id={data.id}
                           title={data.title}
                           completed={data.completed}
